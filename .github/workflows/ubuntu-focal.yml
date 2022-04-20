@@ -1,0 +1,12 @@
+name: Ubuntu Focal
+
+on: [push]
+
+jobs:
+  linux:
+    name: Ubuntu Focal
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: .github/docker.sh SwiftSystemExit 'swift build -Xswiftc -warnings-as-errors' 5.5.2 focal

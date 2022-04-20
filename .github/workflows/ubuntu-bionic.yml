@@ -1,0 +1,12 @@
+name: Ubuntu Bionic
+
+on: [push, pull_request]
+
+jobs:
+  linux:
+    name: Ubuntu Bionic
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: .github/docker.sh SwiftSystemExit 'swift build -Xswiftc -warnings-as-errors' 5.5.2 bionic

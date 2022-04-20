@@ -1,0 +1,12 @@
+name: CentOS 8
+
+on: [push]
+
+jobs:
+  linux:
+    name: CentOS 8
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: .github/docker.sh SwiftSystemExit 'swift build -Xswiftc -warnings-as-errors' 5.5.2 centos8
