@@ -5,6 +5,17 @@ eliminates the need for `#if os` imports.
 
 This package pretends to be part of [apple/swift-system](), and aspire to be subsumed by it one day.
 
+It includes one API:
+
+```swift
+import SystemExit
+// Exit with EXIT_FAILURE.
+//
+// Alternatives are `exit(with: .failure)`,
+// or `exit(with: .init(rawValue: 42))`.
+exit(with: .success)
+```
+
 [apple/swift-system]: https://github.com/apple/swift-system
 
 ## Install
